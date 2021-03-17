@@ -4,8 +4,7 @@
 
 ## [GitHub Repo](https://github.com/Craig-Ryan/get-fed-MS3)
 
-
-![Am I Responsive Image](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Am I Responsive](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Get Fed is my 3rd miilestone project from the [Code Institute](https://codeinstitute.net/) Full Stack Web Development Course. 
 
@@ -169,9 +168,12 @@ audience, !!!
 - A review comment functionality under individual recipes.
 - A share function for users to share recipes from clicking an icon rather than copy/paste-ing the link address.
 
+#### Back to [top](#table-of-contents)
+
 # Technologies used
 
 ## Languages & Frameworks
+
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - used to build the site structure.
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - used to add personal styling to the site.
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - used for adding personalised functionality on the site i.e adding/editing/deleting content. 
@@ -184,5 +186,23 @@ audience, !!!
 - [Heroku](https://www.heroku.com/) - used to host the site. 
 - [Font Awesome](https://fontawesome.com/) - used for icons for better UX. 
 - [Google Fonts](https://fonts.google.com/) - source of the typography used in this project.
-- [dnspython]()
-- []()
+- [dnspython](https://pypi.org/project/dnspython/) - recommended Python DNS toolkit.
+- [PyMongo](https://flask.palletsprojects.com/en/1.1.x/) - used to communicate between Python and MongoDb.
+
+
+## Tools
+
+- [Git](https://git-scm.com/) - for version control and development throughout the entirety of this project.
+- [GitHub](https://github.com/) - for hosting the repositiory for this project.
+- [Balsamiq](https://balsamiq.com/) - for designing the wireframes.
+- [RandomKeyGen](https://randomkeygen.com/) For generating random passwords. 
+- [AmIResponsive](http://ami.responsivedesign.is/) for generating the responsive image at the beginning of this README.
+- [W3C Validator](https://validator.w3.org/) - used to check for errors in HTML.
+- [W3C Validator CSS](https://validator.w3.org/css-validator/) - used to check for errors in CSS.
+- [PEP8 Online](http://pep8online.com/) - used to check for errors in Python and assure it was PEP8 complient.
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse) - used to measure performance, progressiveness, SEO, responsiveness, accessibility & best pracitices.
+- [JSHint](https://jshint.com/) - used to check for errors in JavaScript code.
+- [Favicon](https://favicon.io/) - for generating the icon in the webpage tab.
+
+
+#### Back to [top](#table-of-contents)
