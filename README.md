@@ -206,3 +206,33 @@ audience, !!!
 
 
 #### Back to [top](#table-of-contents)
+
+# Testing
+
+- All testing was conducted and stored in an .md file. <br>
+[View the testing.md file here](TESTING.md).
+
+# Deployment
+
+## To view using GitHub:
+
+1.
+
+## To view on Heroku:
+
+1. Create the 'requirements.txt' file to house the dependencies. Do this in the terminal by typing: pip3 freeze > requirements.txt
+1. Create a 'Procfile' (ensure it starts with a capital P), this tells Heroku how to run the project. Type into the terminal: echo web: python app.py > Procfile
+1. You'll need to save these files to the GitHub repositiory. Type 'git add -A', 'git commit -m "Commit Message"' & 'git push' into the terminal to push the files to Github.
+1. Log in to [Heroku](https://www.heroku.com/)
+1. In the top right corner, click 'New' to create a new app.
+1. Add a unique name and your region.
+1. Now link the Github repository to your new Heroku app: 
+- In the 'Deploy' tab, in the section 'Deployment Method' click on the 'GitHub' option.
+- Below next to your GitHub username add the name of the GitHub repository in the empty box.
+1. Go to 'Settings' > Reveal Config Vars and add the following:
+- IP:  0000
+- PORT: 5000
+- MONGO_URI: input link to MongoDB Database
+- SECRET_KEY: Input your own secret key
+1. Go back to 'Deploy' scroll down to 'Manual Deployment' and click 'Deploy Branch'.
+1. When Heroku has finished loading you can click on the 'View' button to launch your deployed app.
