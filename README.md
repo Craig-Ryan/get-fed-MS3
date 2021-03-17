@@ -216,7 +216,10 @@ audience, !!!
 
 ## To view using GitHub:
 
-1.
+1. View the [Get Fed](https://github.com/Craig-Ryan/get-fed-MS3) project repository.
+1. Click on the 'Code' button and copy the link.
+1. Inside the terminal of your IDE type: <em>git clone</em> then paste the link you copied.
+1. 
 
 ## To view on Heroku:
 
