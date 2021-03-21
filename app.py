@@ -80,7 +80,19 @@ def login():
 def my_recipes(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("my_recipes.html", username=username)
+
+    if session["user"]:
+        return render_template("my_recipes.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    flash("Logged out successfully")
+    session.pop("user")
+    return redirect(url_for("login"))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
