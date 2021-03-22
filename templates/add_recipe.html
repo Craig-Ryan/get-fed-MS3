@@ -27,22 +27,36 @@
           </div>
             <!-- Time -->
             <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
+              <div class="input-field col s12 m8 offset-m2">
               <i class="far fa-clock prefix"></i>
-              <input id="recipe_time" name="recipe_time" type="text" class="validate"
+                <select id="time_name" name="time_name" class="validate" required> 
+                  <option value="" disabled selected>Time to prepare</option>
+                  {% for time in times %}
+                      <option value="{{ time.time_name }}">{{ time.time_name }}</option>
+                  {% endfor %}
+                </select>
+                <label for="time_name"></label>
+              </div>
+              <!-- <input id="recipe_time" name="recipe_time" type="text" class="validate"
                 minlength="3" maxlength="20" required>
-              <label for="recipe_time">Recipe Time</label>
+              <label for="recipe_time">Recipe Time</label> -->
             </div>
-          </div>
             <!-- Difficulty -->
             <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
+              <div class="input-field col s12 m8 offset-m2">
               <i class="fas fa-mountain prefix"></i>
-              <input id="recipe_difficulty" name="recipe_difficulty" type="text" class="validate"
+                <select id="difficulty_name" name="difficulty_name" class="validate" required>
+                  <option value="" disabled selected>Choose the recipe's difficulty</option>
+                  {% for difficulty in difficulties %}
+                      <option value="{{ difficulty.difficulty_name }}">{{ difficulty.difficulty_name }}</option>
+                  {% endfor %}
+                </select>
+                <label for="difficulty_name"></label>
+              </div>
+              <!-- <input id="recipe_time" name="recipe_time" type="text" class="validate"
                 minlength="3" maxlength="20" required>
-              <label for="recipe_difficulty">Difficulty</label>
+              <label for="recipe_time">Recipe Time</label> -->
             </div>
-          </div>
           <!-- Ingredients -->
             <div class="row">
             <div class="input-field col s12 m8 offset-m2">

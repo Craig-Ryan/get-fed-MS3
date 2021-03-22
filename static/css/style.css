@@ -41,8 +41,8 @@ nav {
 } */
 
 .card-panel {
-  background-color: #133840;
-  color: #f6f6f6;
+  /* background-color: #133840; */
+  /* color: #f6f6f6; */
   -webkit-box-shadow: 0 8px 6px -6px black;
 	   -moz-box-shadow: 0 8px 6px -6px black;
 	        box-shadow: 0 8px 6px -6px black;

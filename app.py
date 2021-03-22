@@ -96,7 +96,9 @@ def logout():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    times = mongo.db.times.find().sort("time_name", 1)
+    difficulties = mongo.db.difficulties.find().sort("difficulty_name", 1)
+    return render_template("add_recipe.html", times=times, difficulties=difficulties)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
