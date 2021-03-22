@@ -4,14 +4,17 @@
   box-sizing: border-box;
 }
 
+/* Materialize sticky-footer */
 body {
-  display: flex;
-  flex-direction: column;
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-main {
+  main {
     flex: 1 0 auto;
   }
+
   
 nav {
   background-color: #2b4b40;
@@ -33,6 +36,23 @@ nav {
   line-height: 2;
 }
 
-.card-link {
-  color: #000 !important;
+/* .header-text {
+  color: #133840;
+} */
+
+.card-panel {
+  background-color: #133840;
+  color: #f6f6f6;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+}
+
+/* .card-panel-mod {
+  background-color: #fef49d;
+  color: #133840;
+} */
+
+.page-footer-mod {
+  background-color: #2b4b40;
 }
