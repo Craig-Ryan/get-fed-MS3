@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     return render_template("index.html", recipes=recipes)
 
 
@@ -64,7 +64,7 @@ def login():
                         request.form.get("username")))
                     return redirect(url_for(
                         "my_recipes", username=session["user"]))
-                    
+
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -76,7 +76,7 @@ def login():
     return render_template("login.html")
 
 
-@ app.route("/my_recipes/<username>", methods=["GET", "POST"])
+@app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -92,6 +92,11 @@ def logout():
     flash("Logged out successfully")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+  }
+  
 nav {
   background-color: #2b4b40;
 }
@@ -22,4 +31,8 @@ nav {
 
 .flashes h4 {
   line-height: 2;
+}
+
+.card-link {
+  color: #000 !important;
 }

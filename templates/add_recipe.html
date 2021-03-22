@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <main>
+      <h3 class="light-blue-text text-darken-4 center-align">Add Recipes</h3>
+  
+      <div class="row">
+        <form class="col s12 card-panel" method="POST" action="">
+          <!-- Name -->
+          <div class="row">
+            <div class="input-field col s12 m8 offset-m2">
+              <i class="fas fa-utensils prefix"></i>
+              <input id="recipe_name" name="recipe_name" type="text" class="validate"
+                minlength="3" maxlength="20" required>
+              <label for="recipe_name">Recipe Name</label>
+            </div>
+          </div>
+          <!-- Description -->
+          <div class="row">
+            <div class="input-field col s12 m8 offset-m2">
+              <i class="fas fa-info-circle prefix"></i>
+              <input id="recipe_description" name="recipe_description" type="text" class="validate"
+                minlength="3" maxlength="200" required>
+              <label for="recipe_description">Recipe Description</label>
+            </div>
+          </div>
+            <!-- Time -->
+            <div class="row">
+            <div class="input-field col s12 m8 offset-m2">
+              <i class="fas fa-info-circle prefix"></i>
+              <input id="recipe_description" name="recipe_description" type="text" class="validate"
+                minlength="3" maxlength="200" required>
+              <label for="recipe_description">Recipe Description</label>
+            </div>
+          </div>
+            <!-- Difficulty -->
+  
+        </form>
+      </div>
+    </main>
+  </div>
+{% endblock %}
