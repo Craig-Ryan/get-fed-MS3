@@ -6,13 +6,13 @@
     </div>
   
       <div class="row">
-        <form class="col s12 card-panel" method="POST" action="">
+        <form class="col s12 card-panel" method="POST" action="{{url_for('add_recipe') }}">
           <!-- Name -->
           <div class="row">
             <div class="input-field col s12 m8 offset-m2">
               <i class="far fa-plus-square prefix"></i>
               <input id="recipe_name" name="recipe_name" type="text" class="validate"
-                minlength="3" maxlength="20" required>
+                minlength="3" maxlength="40" required>
               <label for="recipe_name">Recipe Name</label>
             </div>
           </div>
@@ -37,9 +37,6 @@
                 </select>
                 <label for="time_name"></label>
               </div>
-              <!-- <input id="recipe_time" name="recipe_time" type="text" class="validate"
-                minlength="3" maxlength="20" required>
-              <label for="recipe_time">Recipe Time</label> -->
             </div>
             <!-- Difficulty -->
             <div class="row">
@@ -53,9 +50,6 @@
                 </select>
                 <label for="difficulty_name"></label>
               </div>
-              <!-- <input id="recipe_time" name="recipe_time" type="text" class="validate"
-                minlength="3" maxlength="20" required>
-              <label for="recipe_time">Recipe Time</label> -->
             </div>
           <!-- Ingredients -->
             <div class="row">
@@ -72,7 +66,7 @@
               <i class="fas fa-list-ol prefix"></i>
               <textarea id="recipe_method" name="recipe_method" type="text"
                 minlength="3" maxlength="500" class="materialize-textarea"
-                placeholder="Separate ingredients with commas" required></textarea>
+                placeholder="Separate steps with commas" required></textarea>
               <label for="recipe_method">Recipe instructions</label>
             </div>
           </div>
@@ -81,15 +75,17 @@
             <div class="input-field col s12 m8 offset-m2">
               <i class="fas fa-camera-retro prefix"></i>
               <input id="recipe_image" name="recipe_image" type="text" class="validate"
-                minlength="3" maxlength="20" required>
+                minlength="3" maxlength="100" required>
               <label for="recipe_image">Add Image URL</label>
               <p class="lead">Image URLs should end in <em>.jpg, .jpg </em> or <em>.png</em></p>  
             </div>
           </div>
+          <!-- Submit Button -->
+          <div class="col s6 center-align">
+              <button type="submit" class="btn-large text-shadow">SUBMIT</button>
+          </div>
         </form>
       </div>
   </div>
-{% endblock %}
 
-<i class="far fa-images"></i>
-<i class="fas fa-camera-retro"></i>
+{% endblock %}

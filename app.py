@@ -81,8 +81,10 @@ def my_recipes(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    recipes = list(mongo.db.recipes.find())
+
     if session["user"]:
-        return render_template("my_recipes.html", username=username)
+        return render_template("my_recipes.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -94,11 +96,30 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if request.method == "POST":
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_time": request.form.get("recipe_time"),
+            "recipe_difficulty": request.form.get("recipe_difficulty"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
+            "recipe_image": request.form.get("recipe_image"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("my_recipes", username=username))
+
     times = mongo.db.times.find().sort("time_name", 1)
     difficulties = mongo.db.difficulties.find().sort("difficulty_name", 1)
-    return render_template("add_recipe.html", times=times, difficulties=difficulties)
+    return render_template("add_recipe.html",
+      times=times, difficulties=difficulties)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
