@@ -56,3 +56,8 @@ nav {
 .page-footer-mod {
   background-color: #2b4b40;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+}
