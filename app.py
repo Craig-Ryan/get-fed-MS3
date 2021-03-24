@@ -122,6 +122,16 @@ def add_recipe():
       times=times, difficulties=difficulties)
 
 
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    times = mongo.db.times.find().sort("time_name", 1)
+    difficulties = mongo.db.difficulties.find().sort("difficulty_name", 1)
+    return render_template("edit_recipe.html", recipe=recipe,
+      times=times, difficulties=difficulties)
+
+
 @app.route("/get_recipe/<recipe_id>", methods=["GET"])
 def get_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
