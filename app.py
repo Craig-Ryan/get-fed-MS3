@@ -84,7 +84,8 @@ def my_recipes(username):
     recipes = list(mongo.db.recipes.find())
 
     if session["user"]:
-        return render_template("my_recipes.html", username=username, recipes=recipes)
+        return render_template("my_recipes.html",
+          username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
