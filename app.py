@@ -8,12 +8,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
+COOKING_TIME = ((30, '<30 mins'), (60, '<60 mins'), (61, '>60 mins'))
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
 
 mongo = PyMongo(app)
 
@@ -115,10 +117,7 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("my_recipes", username=username))
 
-    times = mongo.db.times.find().sort("time_name", 1)
-    difficulties = mongo.db.difficulties.find().sort("difficulty_name", 1)
-    return render_template("add_recipe.html",
-      times=times, difficulties=difficulties)
+    return render_template("add_recipe.html", times=COOKING_TIME)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -134,7 +133,8 @@ def edit_recipe(recipe_id):
 @app.route("/get_recipe/<recipe_id>", methods=["GET"])
 def get_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("get_recipe.html", recipe=recipe)
+    # import pdb;pdb.set_trace()
+    return render_template("get_recipe.html", recipe=recipe, times=COOKING_TIME)
 
 
 if __name__ == "__main__":

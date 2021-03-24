@@ -36,10 +36,10 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
               <i class="far fa-clock prefix"></i>
-                <select id="time_name" name="time_name" class="validate" required> 
+                <select id="recipe_time" name="recipe_time" class="validate" required> 
                   <option value="" disabled selected>Time to prepare</option>
-                  {% for time in times %}
-                      <option value="{{ time.time_name }}">{{ time.time_name }}</option>
+                  {% for value, label in times %}
+                      <option value="{{ value }}">{{ label }}</option>
                   {% endfor %}
                 </select>
                 <!-- <label for="time_name"></label> -->
