@@ -66,4 +66,9 @@ nav {
   background-color: #2b4b40;
 }
 
-
+.card .card-image img {
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

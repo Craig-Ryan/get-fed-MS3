@@ -13,7 +13,8 @@
     </div>
 
       <div class="row card-panel">
-        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <form class="col s12" method="POST"
+        action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
           <!-- Name -->
           <div class="row">
             <div class="input-field col s12 m8 offset-m2">
@@ -37,25 +38,16 @@
               <div class="input-field col s12 m8 offset-m2">
               <i class="far fa-clock prefix"></i>
                 <select id="time_name" name="time_name" class="validate" required> 
-                  <option value="" disabled selected>Time to prepare</option>
+                  <option value="" disabled>Time to prepare</option>
                   {% for time in times %}
+                    {% if time.time_name == time.time_name %}
+                      <option value="{{ time.time_name }}" selected>{{ time.time_name }}</option>
+                    {% else %}
                       <option value="{{ time.time_name }}">{{ time.time_name }}</option>
+                    {% endif %}
                   {% endfor %}
                 </select>
                 <!-- <label for="time_name"></label> -->
-              </div>
-            </div>
-            <!-- Difficulty -->
-            <div class="row">
-              <div class="input-field col s12 m8 offset-m2">
-              <i class="fas fa-mountain prefix"></i>
-                <select id="difficulty_name" name="difficulty_name" class="validate" required>
-                  <option value="" disabled selected>Choose the recipe's difficulty</option>
-                  {% for difficulty in difficulties %}
-                      <option value="{{ difficulty.difficulty_name }}">{{ difficulty.difficulty_name }}</option>
-                  {% endfor %}
-                </select>
-                <!-- <label for="difficulty_name"></label> -->
               </div>
             </div>
           <!-- Ingredients -->
@@ -63,7 +55,7 @@
             <div class="input-field col s12 m8 offset-m2">
               <i class="fas fa-list-ul prefix"></i>
               <textarea id="recipe_ingredients" name="recipe_ingredients" type="text" class="materialize-textarea"
-               minlength="3" maxlength="200" placeholder="Separate ingredients with commas" required>
+               minlength="3" maxlength="1500" placeholder="Separate ingredients with commas" required>
                {{- recipe.recipe_ingredients -}}
               </textarea>
               <label for="recipe_ingredients">Ingredients</label>

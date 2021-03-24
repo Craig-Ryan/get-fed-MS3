@@ -106,7 +106,6 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_time": request.form.get("recipe_time"),
-            "recipe_difficulty": request.form.get("recipe_difficulty"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
             "recipe_image": request.form.get("recipe_image"),
