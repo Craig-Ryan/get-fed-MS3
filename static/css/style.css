@@ -14,7 +14,6 @@ body {
   main {
     flex: 1 0 auto;
   }
-
   
 nav {
   background-color: #2b4b40;
@@ -26,10 +25,20 @@ nav {
 
 .btn-large {
   background-color: #92a742;
+  border-radius: 8px;
 }
 
 .btn-large:hover {
   background-color: #b48c59;
+}
+
+.btn-small {
+  border-radius: 8px;
+}
+
+.my-btn {
+  margin: 5px;
+  border-radius: 8px;
 }
 
 .flashes h4 {
@@ -40,24 +49,21 @@ nav {
   color: #133840;
 } */
 
+.card {
+  border-radius: 8px;
+}
+
 .card-panel {
   /* background-color: #133840; */
   /* color: #f6f6f6; */
+  border-radius: 8px;
   -webkit-box-shadow: 0 8px 6px -6px black;
 	   -moz-box-shadow: 0 8px 6px -6px black;
 	        box-shadow: 0 8px 6px -6px black;
 }
 
-/* .card-panel-mod {
-  background-color: #fef49d;
-  color: #133840;
-} */
-
 .page-footer-mod {
   background-color: #2b4b40;
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-}
+
