@@ -41,7 +41,6 @@
                   name="recipe_time" 
                   minlength="1" 
                   maxlength="3"
-                  value="{{ recipe.recipe_time}}" 
                   type="text" 
                   class="validate" 
                   required 
@@ -72,10 +71,16 @@
            <div class="row">
             <div class="input-field col s12 m8 offset-m2">
               <i class="fas fa-camera-retro prefix"></i>
-              <input id="recipe_image" name="recipe_image" type="text" class="validate"
-                minlength="3" maxlength="150" required>
-              <label for="recipe_image">Add Image URL</label>
-              <p class="lead">Image URLs must end in <em>.jpg, .jpeg </em> or <em>.png</em></p>  
+              <input 
+                  id="recipe_image" 
+                  name="recipe_image" 
+                  type="file" 
+                  class="validate"
+                  minlength="3" 
+                  maxlength="150" 
+                  required
+                >
+              <label for="recipe_image"></label> 
             </div>
           </div>
           <!-- Submit Button -->

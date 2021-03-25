@@ -99,10 +99,15 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    if request.method == "POST":
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
+    if "recipe_image" in request.files:
+        recipe_image = request.files["recipe_image"]
+        if recipe_image != "":
+            mongo.save_file(recipe_image.filename, recipe_image)
+    
+    if request.method == "POST":
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
@@ -119,12 +124,17 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
+@app.route("/uploaded_image/<filename>")
+def uploaded_image(filename):
+    return mongo.send_file(filename)
+
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
     if request.method == "POST":
-         
+
         submit = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
