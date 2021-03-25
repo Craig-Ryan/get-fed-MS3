@@ -10,16 +10,13 @@
           {{ recipe.recipe_name }}
         </h3>
         <p>By: {{ recipe.created_by }}</p>
-        <p> {{ recipe.recipe_description }}</p>
+        <p>{{ recipe.recipe_description }}</p>
         <p>{{ recipe.recipe_time }} mins</p>
-        <!-- {% for value, label in times %}
-            {% if value | string() == recipe.recipe_time %}
-                <p>{{ label }}</p>
-            {% endif %}              
-        {% endfor %} -->
-        <p> {{ recipe.recipe_ingredients }}</p>
-        <p> {{ recipe.recipe_method }}</p>
-            <img src="{{ url_for('uploaded_image', filename=recipe['recipe.recipe_image'])}}" alt="Image for {{ recipe.recipe_name }}">
+        <p>{{ recipe.recipe_ingredients }}</p>
+        <p>{{ recipe.recipe_method }}</p>
+        <!-- Recipe Image -->
+            <img src="{{ url_for('uploaded_image', filename=recipe.recipe_image)}}" alt="Image for {{ recipe.recipe_name }}">
+        <!-- Edit/Delete Buttons -->
         <div class="row">
           <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small my-btn blue lighten-1">Edit</a>
           <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small my-btn red darken-4">Delete</a>

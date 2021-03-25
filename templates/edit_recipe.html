@@ -14,7 +14,7 @@
 
       <div class="row card-panel">
         <form class="col s12" method="POST"
-        action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" enctype="multipart/form-data">
           <!-- Name -->
           <div class="row">
             <div class="input-field col s12 m8 offset-m2">
@@ -81,13 +81,12 @@
                   id="recipe_image" 
                   name="recipe_image" 
                   type="file" 
-                  value="{{ recipe.recipe_image }}"
+                  value="{{ url_for('uploaded_image', filename=recipe['recipe.recipe_image'])}}"
                   class="validate"
                   minlength="3" 
                   maxlength="150" 
                   required
                 >
-              <label for="recipe_image"></label>
             </div>
           </div>
           <!-- Submit Button -->

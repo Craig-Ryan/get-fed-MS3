@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% import 'components.html' as components %}
+
   {% block content %}
 
   <div class="row">
@@ -12,7 +14,7 @@
     </div>
   </div>
   <div class="row container">
-    {% for recipe in recipes %}
+    {% for recipe in recipes['items'] %}
     <div class="col s12 m6 l4">
       <div class="card sticky-action medium">
         <div class="card-image">
@@ -31,5 +33,9 @@
       </div>
     </div>
     {% endfor %}
+
+    <section class="container pagination-container">
+      {{ components.pagination(url_for('home'), recipes) }}
+    </section>
   </div>
   {% endblock %}
