@@ -101,9 +101,10 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
     if request.method == "POST":
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
@@ -122,19 +123,32 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if request.method == "POST":
+        # username = mongo.db.users.find_one(
+        #     {"username": session["user"]})["username"]
 
-    times = mongo.db.times.find().sort("time_name", 1)
-    difficulties = mongo.db.difficulties.find().sort("difficulty_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe,
-      times=times, difficulties=difficulties)
+        submit = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_time": request.form.get("recipe_time"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
+            "recipe_image": request.form.get("recipe_image"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Recipe Updated")
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("edit_recipe.html", recipe=recipe, times=COOKING_TIME)
 
 
 @app.route("/get_recipe/<recipe_id>", methods=["GET"])
 def get_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # import pdb;pdb.set_trace()
-    return render_template("get_recipe.html", recipe=recipe, times=COOKING_TIME)
+    return render_template("get_recipe.html",
+    recipe=recipe, times=COOKING_TIME)
 
 
 if __name__ == "__main__":

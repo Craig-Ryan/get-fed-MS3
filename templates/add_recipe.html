@@ -77,7 +77,10 @@
           <!-- Submit Button -->
           <div class="row center-align">
             <div class="col s12">
-                <button type="submit" class="btn-large text-shadow">SUBMIT <i class="fas fa-plus"></i></button>
+              <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn-large red text-shadow">
+                Cancel <i class="fas fa-times-circle right"></i>
+              </a>
+              <button type="submit" class="btn-large text-shadow">SUBMIT <i class="fas fa-plus"></i></button>
             </div>
           </div>
         </form>

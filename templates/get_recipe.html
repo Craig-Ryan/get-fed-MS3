@@ -18,7 +18,7 @@
         {% endfor %}
         <p> {{ recipe.recipe_ingredients }}</p>
         <p> {{ recipe.recipe_method }}</p>
-        <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" height="400px" width="400px"></img>
+        <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" height="400px" width="400px">
         <div class="row">
           <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small my-btn blue lighten-1">Edit</a>
           <a class="btn-small my-btn red darken-4">Delete</a>
