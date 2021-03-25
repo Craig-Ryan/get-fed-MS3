@@ -36,13 +36,17 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
               <i class="far fa-clock prefix"></i>
-                <select id="recipe_time" name="recipe_time" class="validate" required> 
-                  <option value="" disabled selected>Time to prepare</option>
-                  {% for value, label in times %}
-                      <option value="{{ value }}">{{ label }}</option>
-                  {% endfor %}
-                </select>
-                <!-- <label for="time_name"></label> -->
+                <input 
+                  id="recipe_time" 
+                  name="recipe_time" 
+                  minlength="1" 
+                  maxlength="3"
+                  value="{{ recipe.recipe_time}}" 
+                  type="text" 
+                  class="validate" 
+                  required 
+                />
+                <label for="recipe_time">Time (mins)</label>
               </div>
             </div>
           <!-- Ingredients -->

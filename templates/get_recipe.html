@@ -11,11 +11,12 @@
         </h3>
         <p>By: {{ recipe.created_by }}</p>
         <p> {{ recipe.recipe_description }}</p>
-        {% for value, label in times %}
+        <p>{{ recipe.recipe_time }} mins</p>
+        <!-- {% for value, label in times %}
             {% if value | string() == recipe.recipe_time %}
                 <p>{{ label }}</p>
             {% endif %}              
-        {% endfor %}
+        {% endfor %} -->
         <p> {{ recipe.recipe_ingredients }}</p>
         <p> {{ recipe.recipe_method }}</p>
         <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" height="400px" width="400px">

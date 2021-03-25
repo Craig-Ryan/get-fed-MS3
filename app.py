@@ -8,8 +8,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-COOKING_TIME = ((30, '<30 mins'), (60, '<60 mins'), (61, '>60 mins'))
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -118,7 +116,7 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("my_recipes", username=username))
 
-    return render_template("add_recipe.html", times=COOKING_TIME)
+    return render_template("add_recipe.html")
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -140,7 +138,7 @@ def edit_recipe(recipe_id):
         flash("Recipe Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe.html", recipe=recipe, times=COOKING_TIME)
+    return render_template("edit_recipe.html", recipe=recipe)
 
 
 @app.route("/get_recipe/<recipe_id>", methods=["GET"])
@@ -148,7 +146,7 @@ def get_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # import pdb;pdb.set_trace()
     return render_template("get_recipe.html",
-    recipe=recipe, times=COOKING_TIME)
+    recipe=recipe)
 
 
 if __name__ == "__main__":
