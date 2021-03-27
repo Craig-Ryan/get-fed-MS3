@@ -72,3 +72,8 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
+
+.display-image {
+    height: 350px;
+    width: 350px;
+}
