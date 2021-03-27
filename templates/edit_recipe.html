@@ -80,13 +80,15 @@
               <input 
                   id="recipe_image" 
                   name="recipe_image" 
-                  type="file" 
-                  value="{{ url_for('uploaded_image', filename=recipe['recipe.recipe_image'])}}"
+                  type="url" 
+                  value="{{ recipe.recipe_image }}"
                   class="validate"
                   minlength="3" 
                   maxlength="150" 
                   required
                 >
+                <label for="recipe_image">Insert URL for recipe ending in
+                   <strong><em>.jpg, .jpeg</em></strong> or <strong><em>.png</em></strong> </label>
             </div>
           </div>
           <!-- Submit Button -->

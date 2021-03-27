@@ -128,17 +128,13 @@ def add_recipe():
         {"username": session["user"]})["username"]
 
     if request.method == "POST":
-        if "recipe_image" in request.files:
-            recipe_image = request.files["recipe_image"]
-            mongo.save_file(recipe_image.filename, recipe_image)
-
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_time": request.form.get("recipe_time"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
-            "recipe_image": recipe_image.filename,
+            "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -152,10 +148,6 @@ def add_recipe():
 def edit_recipe(recipe_id):
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-
-    if "recipe_image" in request.files:
-        recipe_image = request.files["recipe_image"]
-        mongo.save_file(recipe_image.filename, recipe_image)
 
     if request.method == "POST":
 
