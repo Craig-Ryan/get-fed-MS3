@@ -17,10 +17,20 @@
         <!-- Recipe Image -->
             <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}">
         <!-- Edit/Delete Buttons -->
+        {% if session.user == recipe.created_by %}
+        <!-- edit/delete btn -->
+        <a class="btn btn-small blue" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+          Edit
+        </a>
+        <a class="btn btn-small red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">
+          Delete
+        </a>
+        {% endif %}
+          
         <div class="row">
-          <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small my-btn blue lighten-1">Edit</a>
-          <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small my-btn red darken-4">Delete</a>
+          <a href="{{ url_for('home') }}" class="btn-small my-btn red darken-4">Home</a>
         </div>
+        
       </div>
     </div>
   </div>
