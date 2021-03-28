@@ -47,14 +47,14 @@
     <div class="col s12 left-align methods">
     <h4>Ingredients</h4>
     {% for ingredient in recipe.recipe_ingredients.splitlines() %}
-        <li>{{ ingredient }}</li>
+        <li>{{ ingredient.capitalize() }}</li>
     {% endfor %}
     </div>
     
     <div class="col s12 left-align methods">
     <h4>Instructions</h4>
     {% for method in recipe.recipe_method.splitlines() %}
-      <li>{{ method }}</li>
+      <li>{{ method.capitalize() }}</li>
     {% endfor %}
     </div>
   </div>

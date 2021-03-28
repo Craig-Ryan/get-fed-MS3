@@ -1,5 +1,4 @@
 import os
-import math
 import pymongo
 from flask import (
     Flask, flash, render_template,
@@ -10,21 +9,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-# -----Pagination and sorting params variables ----- #
-PAGE_SIZE = 6
-KEY_PAGE_SIZE = 'page_size'
-KEY_PAGE_NUMBER = 'page_number'
-KEY_TOTAL = 'total'
-KEY_PAGE_COUNT = 'page_count'
-KEY_ENTITIES = 'items'
-KEY_NEXT = 'next_uri'
-KEY_PREV = 'prev_uri'
-KEY_SEARCH_TERM = 'search_term'
-KEY_ORDER_BY = 'order_by'
-KEY_ORDER = 'order'
-
 
 app = Flask(__name__)
+
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")

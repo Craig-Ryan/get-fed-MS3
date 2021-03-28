@@ -12,19 +12,19 @@
     </div>
   </div>
 
-  <div class="row card-panel grey lighten-5">
+  <div class="row card-panel lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
+                <div class="input-field col s12 m10 offset-m1">
                     <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-                    <input type="text" name="query" id="query" minlength="2" class="validate" required>
-                    <label for="query">Search Tasks</label>
-                </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('home') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="light-blue darken-1 btn text-shadow">
-                        <i class="fas fa-search left"></i> Search
-                    </button>
+                    <input 
+                      type="text" 
+                      name="query" 
+                      id="query" 
+                      minlength="2" 
+                      class="validate" 
+                      required>
+                    <label for="query">Search Recipes</label>
                 </div>
             </div>
         </form>
@@ -52,6 +52,10 @@
     {% endfor %}
   </div>
   {% else %}
-  <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+  <div class="row center-align">
+    <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+    <a href="{{ url_for('home') }}" class="red btn text-shadow">Home</a>
+  </div>
+  
   {% endif %}
 {% endblock %}

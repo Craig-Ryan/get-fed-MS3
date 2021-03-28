@@ -93,7 +93,7 @@
                   maxlength="150" 
                   required
                 >
-                <label for="recipe_image">Insert URL for recipe ending in
+                <label for="recipe_image">URL for recipe ending
                    <strong><em>.jpg, .jpeg</em></strong> or <strong><em>.png</em></strong> </label>
             </div>
           </div>
@@ -101,9 +101,11 @@
           <div class="row center-align">
             <div class="col s12">
               <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn-large red text-shadow">
-                Cancel <i class="fas fa-times-circle right"></i>
+                Cancel<i class="fas fa-times-circle right"></i>
               </a>
-                <button type="submit" class="btn-large blue lighten-1 text-shadow">Edit <i class="fas fa-edit"></i></button>
+                <button type="submit" class="btn-large blue lighten-1 text-shadow">
+                  Edit <i class="fas fa-edit"></i>
+                </button>
             </div>
           </div>
         </form>
