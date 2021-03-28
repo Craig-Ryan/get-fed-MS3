@@ -4,7 +4,7 @@
 
 ## [GitHub Repo](https://github.com/Craig-Ryan/get-fed-MS3)
 
-![Am I Responsive](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Am I Responsive](static/images/ami.PNG)
 
 Get Fed is my 3rd miilestone project from the [Code Institute](https://codeinstitute.net/) Full Stack Web Development Course. 
 
