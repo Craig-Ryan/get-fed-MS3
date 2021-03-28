@@ -1,28 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <!-- <div class="row card-panel grey lighten-5">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-                    <input type="text" name="query" id="query" minlength="2" class="validate" required>
-                    <label for="query">Search Tasks</label>
-                </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('home') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="light-blue darken-1 btn text-shadow">
-                        <i class="fas fa-search left"></i> Search
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div> -->
-
-  <div class="row card-panel">
-    <div class="col s12 m8 offset-m2">
+  <div class="col s12 m8 offset-m2">
         <div class="card-panel center-align">
-          <!-- find out how to add all recipes added by that user -->
           <h3 class="center-align header-text">
         {{ recipe.recipe_name.capitalize() }}
           </h3>
@@ -31,18 +11,15 @@
         </div>
       </div>
 
-      
-      <!-- <div class="row"> -->
+  <div class="row card-panel">
     <div class="col s12 m6 left">
       <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" class="recipe-image">
     </div>
     <!-- </div> -->
-    <!-- <div class="row"> -->
     <div class="col s12 m6 right">
       <span><i class="fas fa-info-circle left small"></i><p>{{ recipe.recipe_description }}</p><br></span>
       <span><i class="far fa-clock left small"></i><p>{{ recipe.recipe_time }} mins</p></span>
     </div>
-  <!-- </div> -->
   <div class="row">
     <div class="col s12 left-align methods">
     <h4>Ingredients</h4>
@@ -75,7 +52,7 @@
   </div>
   <div class="row">
     <div class="col s12 center-align">
-      <a href="{{ url_for('home') }}" class="btn-small my-btn red darken-4">Home</a>
+      <a href="{{ url_for('home') }}" class="btn-small">Home</a>
     </div>
   </div>
 {% endblock %}

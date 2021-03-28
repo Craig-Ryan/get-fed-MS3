@@ -6,6 +6,9 @@
   <!-- Font Awesome Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <!--  Google Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Train+One&display=swap" rel="stylesheet">  
   <!-- Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
   <!--Import Google Icon Font-->
@@ -42,7 +45,7 @@
     
     <!-- Mobile Side Navbar -->
     <ul class="sidenav" id="mobile-demo">
-        <h4 class="center-align"><a href="#">Get Fed</a></h4>
+        <h4 class="center-align"><a href="#" class="brand-logo black-text">Get Fed</a></h4>
         <li><a href="{{ url_for('home') }}">Home</a></li>
         {% if session.user  %}
             <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
@@ -76,27 +79,13 @@
     <!-- footer -->
     <footer class="page-footer-mod">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
+        <div class="row center-align">
+          <div class="col s6 offset-s3">
+            <a class="grey-text text-lighten-3" href="https://github.com/Craig-Ryan" target="_blank"><i class="fab fa-github small"></i></i></a>
+            <a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/craig-ryan-713359159/" target="_blank"><i class="fab fa-linkedin small"></i></a>
+          <p class="copyright white-text">Copyright &copy; Get Fed <span id="copyright"></span></p>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
+      </div>
       </div>
     </footer>
 
@@ -108,6 +97,10 @@
   <!-- Personalized JS -->
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <!-- Inject JS -->
+  <!-- Personal JS Courtesy of Thorin Flask App Code Institute Mini Project-->
+  <script>
+    $("#copyright").text(new Date().getFullYear());
+  </script>
   {% block scripts %}
   {% endblock %}
 </body>

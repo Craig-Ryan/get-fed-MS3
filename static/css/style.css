@@ -9,6 +9,9 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #fffadd;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 16px;
   }
 
   main {
@@ -17,6 +20,11 @@ body {
   
 nav {
   background-color: #2b4b40;
+}
+
+.brand-logo {
+  font-family: 'Train One', sans-serif;
+  padding-left: 20px;
 }
 
 .text-shadow {
@@ -28,11 +36,13 @@ nav {
   border-radius: 8px;
 }
 
-.btn-large:hover {
+.btn-large:hover,
+.btn-small:hover {
   background-color: #b48c59;
 }
 
 .btn-small {
+  background-color: #92a742;
   border-radius: 8px;
 }
 
@@ -45,16 +55,17 @@ nav {
   line-height: 2;
 }
 
-/* .header-text {
-  color: #133840;
-} */
+.header-text {
+  color: #292c3f;
+  text-shadow: 11px 1px 2px #fff;
+}
 
 .card {
   border-radius: 8px;
 }
 
 .card-panel {
-  /* background-color: #133840; */
+  background-color: rgba(244,237,229, 0.2);
   /* color: #f6f6f6; */
   border-radius: 8px;
   -webkit-box-shadow: 0 8px 6px -6px black;
@@ -64,10 +75,15 @@ nav {
 
 .page-footer-mod {
   background-color: #2b4b40;
+  padding: 20px;
 }
 
-.card .card-image img {
-  height: 275px;
+.page-footer-mod a {
+    margin: 20px;
+}
+.card .card-image-ad img {
+  height: 70vh;
+  width: 100%;
   display: block;
   overflow: hidden;
   object-fit: cover;
@@ -80,4 +96,8 @@ nav {
     overflow: hidden;
     object-fit: cover;
     object-position: 50% 50%;
+}
+
+.copyright {
+  margin-top: 20px;
 }
