@@ -170,6 +170,11 @@ def get_recipe(recipe_id):
     recipe=recipe)
 
 
+@app.route("/resources")
+def resources():
+    return render_template("resources.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
