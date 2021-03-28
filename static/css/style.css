@@ -81,6 +81,14 @@ nav {
 .page-footer-mod a {
     margin: 20px;
 }
+
+.card .card-image img {
+  height: 25vh;
+  display: block;
+  overflow: hidden;
+  object-fit: cover;
+}
+
 .card .card-image-ad img {
   height: 70vh;
   width: 100%;
