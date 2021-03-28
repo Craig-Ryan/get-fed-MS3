@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
-
   <!-- <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -22,19 +20,40 @@
     </div> -->
 
   <div class="row card-panel center-align">
-    <h3 class="center-align header-text">
-        {{ recipe.recipe_name }}
-      </h3>
-    <div class="col s12 m6">
-      <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" class="gallery-image">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel">
+          <!-- find out how to add all recipes added by that user -->
+          <h3 class="center-align header-text">
+        {{ recipe.recipe_name.capitalize() }}
+          </h3>
+        </div>
+      </div>
+
+      
+      <!-- <div class="row"> -->
+    <div class="col s12 m6 left">
+      <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" class="recipe-image">
     </div>
-    <div class="col s12 m6">
+    <!-- </div> -->
+    <!-- <div class="row"> -->
+    <div class="col s12 m6 right">
       <p>By: {{ recipe.created_by }}</p>
       <p>{{ recipe.recipe_description }}</p>
       <p>{{ recipe.recipe_time }} mins</p>
-      <p>{{ recipe.recipe_ingredients }}</p>
+    </div>
+  <!-- </div> -->
+  <div class="row">
+    {% for ingredient in recipe.recipe_ingredients.splitlines() %}
+    <div class="col s12 left-align">
+      <ul>
+        <li>{{ ingredient }}</li>
+      </ul>
+    </div>
+    {% endfor %}
+    <div class="col s12 left-align">
       <p>{{ recipe.recipe_method }}</p>
     </div>
+  </div>
   </div>
   <div class="row">
     <div class="col s12 center-align">
@@ -55,7 +74,4 @@
       <a href="{{ url_for('home') }}" class="btn-small my-btn red darken-4">Home</a>
     </div>
   </div>
-
-</div>
-</div>
 {% endblock %}

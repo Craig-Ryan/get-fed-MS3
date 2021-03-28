@@ -52,8 +52,16 @@
             <div class="row">
             <div class="input-field col s12 m8 offset-m2">
               <i class="fas fa-list-ul prefix"></i>
-              <textarea id="recipe_ingredients" name="recipe_ingredients" type="text" class="materialize-textarea"
-                minlength="3" maxlength="500" placeholder="Separate ingredients with commas" required></textarea>
+              <textarea 
+                id="recipe_ingredients" 
+                name="recipe_ingredients" 
+                type="text" 
+                class="materialize-textarea validate"
+                cols="1"
+                rows="15" 
+                placeholder="Separate ingredients with commas" 
+                required>
+              </textarea>
               <label for="recipe_ingredients">Ingredients</label>
             </div>
           </div>
