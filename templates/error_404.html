@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row card-panel">
+  <div class="col s12 center-align">
+    <h3>Page Not Found! Error 404</h3>
+    <!-- <div class="col m12 hide-on-small-only">
+      <img src="{{ url_for('static', filename='images/broken-plate.gif') }}" alt="Broken Plate" />
+    </div> -->
+    <p class="delete-text">The page you're looking for doesn't exist.</p>
+    <a class="btn-small text-shadow" href="{{ url_for('home') }}">
+      Return Home
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -157,10 +157,18 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
       username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+      recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+      return render_template(
+          "delete_recipe.html", recipe=recipe, username=username)
 
-      mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-      flash("Recipe Deleted")
-      return redirect(url_for("my_recipes", username=username))
+
+@app.route("/delete_recipe_confirm/<recipe_id>")
+def delete_recipe_confirm(recipe_id):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Deleted")
+    return redirect(url_for("my_recipes", username=username))
 
 
 @app.route("/get_recipe/<recipe_id>", methods=["GET"])
@@ -173,6 +181,11 @@ def get_recipe(recipe_id):
 @app.route("/resources")
 def resources():
     return render_template("resources.html")
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("error_404.html")
 
 
 if __name__ == "__main__":

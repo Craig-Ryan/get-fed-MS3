@@ -64,13 +64,13 @@ nav {
   border-radius: 8px;
 }
 
+/* Box Shadow Inspiration https://css-tricks.com/snippets/css/css-box-shadow/ */
 .card-panel {
   background-color: rgba(244,237,229, 0.2);
-  /* color: #f6f6f6; */
   border-radius: 8px;
   -webkit-box-shadow: 0 8px 6px -6px black;
 	   -moz-box-shadow: 0 8px 6px -6px black;
-	        box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
 }
 
 .page-footer-mod {
@@ -90,7 +90,7 @@ nav {
 }
 
 .card .card-image-ad img {
-  height: 70vh;
+  height: 50vh;
   width: 100%;
   display: block;
   overflow: hidden;
@@ -99,7 +99,7 @@ nav {
 }
 
 .recipe-image {
-    height: 50vh;
+    height: 30vh;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
@@ -108,4 +108,8 @@ nav {
 
 .copyright {
   margin-top: 20px;
+}
+
+.delete-text {
+  margin: 20px;
 }
