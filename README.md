@@ -10,6 +10,41 @@ Get Fed is my 3rd miilestone project from the [Code Institute](https://codeinsti
 
 # Table of Contents
 
+**<details><summary>Project overview</summary>**
+* [**_Project overview_**](#project-overview)
+* [**_User Stories_**](#user-stories)
+</details>
+
+**<details><summary>UX</summary>**
+* [**_Strategy Plane_**](#strategy-plane)
+* [**_Scope Plane_**](#scope-plane)
+* [**_Structural Plane_**](#structural-plane)
+* [**_Skeleton Plane_**](#skeleton-plane)
+* [**_Surface Plane_**](#surface-plane)
+
+    * [_Typography_](#typography)
+    * [_Color Scheme_](#colors)
+    * [_Media_](#media)
+</details>
+
+**<details><summary>Features</summary>**
+* [**_Existing Features_**](#existing-features)
+* [**_Future Features_**](#future-features)
+</details>
+
+**<details><summary>Technologies Used</summary>**
+* [**_Languages & Frameworks_**](#languages-and-frameworks)
+* [**_Tools_**](#tools)
+</details>
+
+**<details><summary>Testing</summary>**
+* [**_Testing_**](#testing)
+</details>
+
+**<details><summary>Credits</summary>**
+* [**_Contents_**](#contents)
+* [**_Acknowledgements_**](#acknowledgements)
+</details>
 ---
 
 # Project Overview
@@ -89,11 +124,21 @@ audience, !!!
 
 ### Colors 
 
-- The colors used in tis project are XXXX sourced from [Color Hunt](https://colorhunt.co/) and [Adobe Color](https://color.adobe.com/create/color-wheel/)
+The colors used in this project are:
 
-#### Media 
-- [Color Hunt](https://colorhunt.co/)
-- [Adobe Color](https://color.adobe.com/create/color-wheel/)
+- #fffadd - Site background color
+- #2b4b40 - Navbar and footer
+- #92a742 - Home, log in, view recipe and register buttons
+- #b48c59 - Home, log in, view recipe and register buttons hover effect
+- #292c3f - Header text for page headings
+- rgba(244,237,229, 0.2) - For card-panels 
+- Blue & red - Submit and delete buttons, respectively
+- Black for regular text
+
+ sourced from [Maria Haltoff Blog](https://mariahalthoff.com/blog/).
+
+### Media 
+- [Maria Haltoff Blog](https://mariahalthoff.com/blog/)food-themed-color-palettes
 - [Balsamiq](https://balsamiq.com/)
 
 #### Back to [top](#table-of-contents)
@@ -111,12 +156,14 @@ audience, !!!
 - The navbar is consitent across each page on the site. It houses links to the home page next to a logo, the user's profile, a resources page, log in and register pages.
 
 - Non-registered users see a list of options within the navbar as follows:
-    1. Resources
+    1. Home
     2. Log In
     3. Register
 
 - Registered users see a slightly different version of the navbar when logged in:
+    1. Home
     1. My Recipes
+    1. Add Recipe
     2. Resources
     3. Log Out
 
@@ -142,7 +189,22 @@ audience, !!!
 
 - The user's name is housed in a container displaying the user's name followed by profile.
 - Each of the user's personal recipes are stored in a card displayed in a grid.
-- Buttons with the option to delete or edit a recipe sit below the recipe cards.
+- An option to add a recipe.
+
+### Elements on the My View Pages
+
+- A stored recipe can be viewed here by anybody.
+- The recipe's name and username of it's creator lie on the top of the page.
+- The recipe's image is sat next to it's description and time.
+- The recipe instructions and methods sit below the image.
+- Only the owner of the recipe or admin can make changes to the recipe.
+- Buttons for edit and delete appear for the recipe author and admin.
+- A home button is displayed below the recipe.
+
+### Elements on the Add Recipe Pages
+
+- A form prompting the user to input the repcipe name, instruction, time, ingredients, method and an image url.
+- Buttons with the option to cancel or submit a recipe sit below the form.
 
 ### Elements on the 'Resources' page:
 
@@ -167,12 +229,13 @@ audience, !!!
 - A favorite button for users to add other recipes to their profiles.
 - A review comment functionality under individual recipes.
 - A share function for users to share recipes from clicking an icon rather than copy/paste-ing the link address.
+- The ability for users to upload images as files.
 
 #### Back to [top](#table-of-contents)
 
 # Technologies used
 
-## Languages & Frameworks
+## Languages and Frameworks
 
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - used to build the site structure.
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - used to add personal styling to the site.
@@ -209,8 +272,10 @@ audience, !!!
 
 # Testing
 
-- All testing was conducted and stored in an .md file. <br>
+- Documentaion of testing can be found by going to the link below. <br>
 [View the testing.md file here](TESTING.md).
+
+#### Back to [top](#table-of-contents)
 
 # Deployment
 
@@ -239,3 +304,14 @@ audience, !!!
 - SECRET_KEY: Input your own secret key
 1. Go back to 'Deploy' scroll down to 'Manual Deployment' and click 'Deploy Branch'.
 1. When Heroku has finished loading you can click on the 'View' button to launch your deployed app.
+
+#### Back to [top](#table-of-contents)
+
+# Credits
+
+## Contents
+
+## Acknowledgements
+
+
+#### Back to [top](#table-of-contents)
