@@ -41,6 +41,10 @@ Get Fed is my 3rd miilestone project from the [Code Institute](https://codeinsti
 * [**_Testing_**](#testing)
 </details>
 
+**<details><summary>Deployment</summary>**
+* [**Deployment**](#deployment)
+</details>
+
 **<details><summary>Credits</summary>**
 * [**_Contents_**](#contents)
 * [**_Acknowledgements_**](#acknowledgements)
@@ -63,14 +67,14 @@ audience, !!!
 # User stories
 
 ## User
-- As a new user, I would like to be able to browse through recipes easily.
-- As a returning user, I would like to have the option to register to add my own recipes.
-- As a registered user, I would like to be able to add, edit and delete my recipes.
-- As a casual user, I would like to be able to view the recipes on any device comfortably.
-- As a user, I would like to see other content on the site relating to cooking i.e, cookbooks, utensils etc.
+- As a new user, I would like to be able to browse through recipes easily(READ). 
+- As a returning user, I would like to have the option to register to add my own recipes(CREATE).
+- As a registered user, I would like to be able to add, edit and delete my recipes(CREATE, UPDATE, DELETE).
+- As a casual user, I would like to be able to view the recipes on any device comfortably(READ).
+- As a user, I would like to see other content on the site relating to cooking i.e, cookbooks, utensils etc(READ).
 
 ## Owner
-- As owner of the site I would like to be able to moderate user profiles and add/edit/delete recipes. 
+- As owner of the site I would like to be able to moderate user profiles and add/edit/delete recipes(CRUD). 
 
 # UX Planes
 
@@ -282,9 +286,24 @@ The colors used in this project are:
 ## To view using GitHub:
 
 1. View the [Get Fed](https://github.com/Craig-Ryan/get-fed-MS3) project repository.
-1. Click on the 'Code' button and copy the link.
-1. Inside the terminal of your IDE type: <em>git clone</em> then paste the link you copied.
-1. 
+1. Copy the link for the cloned repository.
+1. In the CLI navigate to the folder where you want to clone the repository.
+1. Type git clone and then paste the copied URL.
+1. Press Enter
+1. Install all requirements by typing `pip install -r requirements.txt`
+1. You need to add an env file to the root directory ensuring the env.py is added to the .gitignore file for security measures.
+1. Add your the following to your env file:
+- os.environ.setdefault("IP", "0.0.0.0")
+- os.environ.setdefault("PORT", "5000")
+- os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
+- os.environ.setdefault("SECRET_KEY", "ADD_YOUR_SECRET_KEY")
+- os.environ.setdefault("MONGO_DBNAME", "YOUR_MONGO_DBNAME")
+
+  Make sure you add your own MONGO_URI, SECRET_KEY & MONGO_DBNAME.
+
+You will also have to set up an env.py file in the root directory of your project, and set up variables for IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME. In addition, you will have to setup a new collection and databases for the project in MongoDB.
+
+The file should now be ready to run from your IDE by typing `python3 app.py`
 
 ## To view on Heroku:
 
@@ -311,7 +330,20 @@ The colors used in this project are:
 
 ## Contents
 
+### Recipes and 3rd-party content included in this project:
+- [Vegan Pad Thai](https://www.noracooks.com/vegan-pad-thai/)
+- [Green Detox Smoothie](https://damndelicious.net/2018/01/01/green-detox-smoothie/)
+- [Oatmeal Energy Balls](https://www.youtube.com/watch?v=-UZNjbjAkrg&t=99s)
+- [Artisanal Bread](https://sallysbakingaddiction.com/homemade-artisan-bread/#tasty-recipes-80079)
+- [Kitchen Confidential Image](https://www.dubraybooks.ie/kitchen-confidential-insiders-edition_9781408845042)
+- [Ugly Delicious Netflix](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.netflix.com%2Fgr-en%2Ftitle%2F80170368&psig=AOvVaw20SwJjkSriwAZhxEFwgWMN&ust=1617024629155000&source=images&cd=vfe&ved=2ahUKEwiki5emjNPvAhXMRcAKHSzgDbMQr4kDegUIARDCAQ)
+- [The Four Hour Chef](https://www.amazon.co.uk/4-Hour-Chef-Learning-Anything-Official/dp/1477800077)
+
 ## Acknowledgements
 
+- For help with building the 404 page is used this [geeksforgeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) article.
+- My mentor Guido Cecilio guided me through the entirety of this project.
+- Most of the structure and guidance for this project was done with the help of the [Code Institute Flask Mini Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/054c3813e82e4195b5a4d8cd8a99ebaa/)
+- Thank you to my peers, friends and family for guidance during the development of this project.
 
 #### Back to [top](#table-of-contents)
