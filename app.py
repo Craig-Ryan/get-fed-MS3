@@ -160,7 +160,7 @@ def delete_recipe(recipe_id):
       recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
       return render_template(
           "delete_recipe.html", recipe=recipe, username=username)
-
+    
 
 @app.route("/delete_recipe_confirm/<recipe_id>")
 def delete_recipe_confirm(recipe_id):
