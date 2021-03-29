@@ -1,115 +1,95 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
 }
-
 /* Materialize sticky-footer */
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #fffadd;
-    font-family: 'Kiwi Maru', serif;
-    font-size: 16px;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-  
-nav {
-  background-color: #2b4b40;
+ body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+     background-color: #fffadd;
+     font-family: 'Kiwi Maru', serif;
+     font-size: 16px;
 }
-
-.brand-logo {
-  font-family: 'Train One', sans-serif;
-  padding-left: 20px;
+ main {
+     flex: 1 0 auto;
 }
-
-.text-shadow {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+ nav {
+     background-color: #2b4b40;
 }
-
-.btn-large {
-  background-color: #92a742;
-  border-radius: 8px;
+ .brand-logo {
+     font-family: 'Train One', sans-serif;
+     padding-left: 20px;
 }
-
-.btn-large:hover,
-.btn-small:hover {
-  background-color: #b48c59;
+ .text-shadow {
+     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
-
-.btn-small {
-  background-color: #92a742;
-  border-radius: 8px;
+ .btn-large {
+     background-color: #92a742;
+     border-radius: 8px;
 }
-
-.my-btn {
-  margin: 5px;
-  border-radius: 8px;
+ .btn-large:hover, .btn-small:hover {
+     background-color: #b48c59;
 }
-
-.flashes h4 {
-  line-height: 2;
+ .btn-small {
+     background-color: #92a742;
+     border-radius: 8px;
 }
-
-.header-text {
-  color: #292c3f;
-  text-shadow: 11px 1px 2px #fff;
+ .my-btn {
+     margin: 5px;
+     border-radius: 8px;
 }
-
-.card {
-  border-radius: 8px;
+ .flashes h4 {
+     line-height: 2;
 }
-
+ .header-text {
+     color: #292c3f;
+     text-shadow: 11px 1px 2px #fff;
+}
+ .card {
+     border-radius: 8px;
+}
 /* Box Shadow Inspiration https://css-tricks.com/snippets/css/css-box-shadow/ */
-.card-panel {
-  background-color: rgba(244,237,229, 0.2);
-  border-radius: 8px;
-  -webkit-box-shadow: 0 8px 6px -6px black;
-	   -moz-box-shadow: 0 8px 6px -6px black;
-          box-shadow: 0 8px 6px -6px black;
+ .card-panel {
+     background-color: rgba(244,237,229, 0.2);
+     border-radius: 8px;
+     -webkit-box-shadow: 0 8px 6px -6px black;
+     -moz-box-shadow: 0 8px 6px -6px black;
+     box-shadow: 0 8px 6px -6px black;
 }
-
-.page-footer-mod {
-  background-color: #2b4b40;
-  padding: 20px;
+ .page-footer-mod {
+     background-color: #2b4b40;
+     padding: 20px;
 }
-
-.page-footer-mod a {
-    margin: 20px;
+ .page-footer-mod a {
+     margin: 20px;
 }
-
-.card .card-image img {
-  height: 25vh;
-  display: block;
-  overflow: hidden;
-  object-fit: cover;
+ .card .card-image img {
+     height: 25vh;
+     display: block;
+     overflow: hidden;
+     object-fit: cover;
 }
-
-.card .card-image-ad img {
-  height: 50vh;
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  object-fit: cover;
-  object-position: 50% 50%;
+ .card .card-image-ad img {
+     height: 50vh;
+     width: 100%;
+     display: block;
+     overflow: hidden;
+     object-fit: cover;
+     object-position: 50% 50%;
 }
-
-.recipe-image {
-    height: 30vh;
-    width: 100%;
-    overflow: hidden;
-    object-fit: cover;
-    object-position: 50% 50%;
+ .recipe-image {
+     height: 30vh;
+     width: 100%;
+     overflow: hidden;
+     object-fit: cover;
+     object-position: 50% 50%;
 }
-
-.copyright {
-  margin-top: 20px;
+ .copyright {
+     margin-top: 20px;
 }
-
-.delete-text {
-  margin: 20px;
+ .delete-text {
+     margin: 20px;
 }
+ 

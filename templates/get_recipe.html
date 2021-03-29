@@ -1,65 +1,68 @@
 {% extends "base.html" %}
 {% block content %}
-
-  <div class="col s12 m8 offset-m2">
-        <div class="card-panel center-align">
-          <h3 class="center-align header-text">
-        {{ recipe.recipe_name.capitalize() }}
-          </h3>
-          
-      <p>By: {{ recipe.created_by }}</p>
-        </div>
-      </div>
-
-  <div class="row card-panel">
-    <div class="col s12 m6 left">
-      <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" class="recipe-image">
-    </div>
-    <!-- </div> -->
-    <div class="col s12 m6 right">
-      <span><i class="fas fa-info-circle left small"></i><p>{{ recipe.recipe_description }}</p><br></span>
-      <span><i class="far fa-clock left small"></i><p>{{ recipe.recipe_time }} mins</p></span>
-    </div>
+<!-- Heading -->
+<div class="col s12 m8 offset-m2">
+  <div class="card-panel center-align">
+    <h3 class="center-align header-text">
+      {{ recipe.recipe_name.capitalize() }}
+    </h3>
+    <p>By: {{ recipe.created_by }}</p>
+  </div>
+</div>
+<!-- Recipe Image Card -->
+<div class="row card-panel">
+  <div class="col s12 m6 left">
+    <img src="{{ recipe.recipe_image }}" alt="Image for {{ recipe.recipe_name }}" class="recipe-image">
+  </div>
+  <!-- </div> -->
+  <!-- Description & Time Card -->
+  <div class="col s12 m6 right">
+    <span><i class="fas fa-info-circle left small"></i>
+      <p>{{ recipe.recipe_description }}</p><br>
+    </span>
+    <span><i class="far fa-clock left small"></i>
+      <p>{{ recipe.recipe_time }} mins</p>
+    </span>
+  </div>
+  <!-- Ingredients & Instructions Row-->
   <div class="row">
     <div class="col s12 left-align methods">
-    <h4>Ingredients</h4>
-    {% for ingredient in recipe.recipe_ingredients.splitlines() %}
-        <li>{{ ingredient.capitalize() }}</li>
-    {% endfor %}
+      <h4>Ingredients</h4>
+      {% for ingredient in recipe.recipe_ingredients.splitlines() %}
+      <li>{{ ingredient.capitalize() }}</li>
+      {% endfor %}
     </div>
-    
     <div class="col s12 left-align methods">
-    <h4>Instructions</h4>
-    {% for method in recipe.recipe_method.splitlines() %}
+      <h4>Instructions</h4>
+      {% for method in recipe.recipe_method.splitlines() %}
       <li>{{ method.capitalize() }}</li>
-    {% endfor %}
+      {% endfor %}
     </div>
   </div>
+</div>
+<div class="row">
+  <div class="col s12 center-align">
+    <!-- Edit/Delete Buttons -->
+    {% if session.user == recipe.created_by %}
+    <a class="btn btn-small blue" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+      Edit
+    </a>
+    <a class="btn btn-small red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">
+      Delete
+    </a>
+    {% elif session.user == "admin" %}
+    <a class="btn btn-small blue" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+      Edit
+    </a>
+    <a class="btn btn-small red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">
+      Delete
+    </a>
+    {% endif %}
   </div>
-  <div class="row">
-    <div class="col s12 center-align">
-      <!-- Edit/Delete Buttons -->
-      {% if session.user == recipe.created_by %}
-      <!-- edit/delete btn -->
-      <a class="btn btn-small blue" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-        Edit
-      </a>
-      <a class="btn btn-small red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">
-        Delete
-      </a>
-      {% elif session.user == "admin" %}
-      <a class="btn btn-small blue" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-        Edit
-      </a>
-      <a class="btn btn-small red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">
-        Delete
-      </a>
-      {% endif %}
-    </div>
+</div>
+<div class="row">
+  <div class="col s12 center-align">
+    <a href="{{ url_for('home') }}" class="btn-small">Home</a>
   </div>
-  <div class="row">
-    <div class="col s12 center-align">
-      <a href="{{ url_for('home') }}" class="btn-small">Home</a>
-    </div>
-  </div>
+</div>
 {% endblock %}

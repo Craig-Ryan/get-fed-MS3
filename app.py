@@ -22,7 +22,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-# change the name
 @app.route("/home")
 def home():
     recipes = list(mongo.db.recipes.find())
@@ -52,7 +51,6 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for(
@@ -191,4 +189,4 @@ def not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)

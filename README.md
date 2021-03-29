@@ -1,6 +1,6 @@
 # Welcome to Get Fed. 
 
-## [Live Site](#)
+## [Live Site on Heroku](http://get-fed-milestone-project.herokuapp.com/home)
 
 ## [GitHub Repo](https://github.com/Craig-Ryan/get-fed-MS3)
 
@@ -121,10 +121,11 @@ audience, !!!
 ### Design 
 
 - The design is responsive across mobile, tablet and personal computer screen sizes. 
+- Click [here](https://github.com/Craig-Ryan/get-fed-MS3/blob/master/Wireframes/get_fed_wireframe.pdf) to view this projects wireframes.
 
 ### Typography 
 
-- The project uses the fonts X and X from [Google Fonts](https://fonts.google.com/)
+- The project uses the fonts 'Train One' and 'Kiwi Maru' from [Google Fonts](https://fonts.google.com/)
 
 ### Colors 
 
